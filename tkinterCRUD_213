@@ -39,3 +39,24 @@ def prediksi_fakultas(biologi, fisika, inggris):
         return "Bahasa"
 
 
+# STEP 4: Membuat fungsi submit nilai
+def submit_nilai():
+    nama = entry_nama.get().strip()
+
+    if not nama:
+        messagebox.showwarning(
+            "Peringatan", "Nama siswa harus diisi!"
+        )
+        return
+
+    try:
+        biologi = float(entry_biologi.get())
+        fisika = float(entry_fisika.get())
+        inggris = float(entry_inggris.get())
+    except ValueError:
+        messagebox.showwarning(
+            "Peringatan", "Semua nilai harus berupa angka!"
+        )
+        return
+
+    
