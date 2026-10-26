@@ -59,4 +59,14 @@ def submit_nilai():
         )
         return
 
+    # Memastikan nilai berada pada rentang 0-100
+    if any(
+        nilai < 0 or nilai > 100
+        for nilai in (biologi, fisika, inggris)
+    ):
+        messagebox.showwarning(
+            "Peringatan", "Nilai harus antara 0 sampai 100!"
+        )
+        return
+
     
