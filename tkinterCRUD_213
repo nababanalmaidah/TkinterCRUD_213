@@ -25,3 +25,17 @@ conn.commit()
 conn.close()
 
 
+# STEP 3: Membuat fungsi prediksi fakultas
+def prediksi_fakultas(biologi, fisika, inggris):
+    nilai_tertinggi = max(biologi, fisika, inggris)
+
+    if [biologi, fisika, inggris].count(nilai_tertinggi) > 1:
+        return "Nilai seri"
+    elif biologi == nilai_tertinggi:
+        return "Kedokteran"
+    elif fisika == nilai_tertinggi:
+        return "Teknik"
+    else:
+        return "Bahasa"
+
+
