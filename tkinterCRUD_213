@@ -69,4 +69,16 @@ def submit_nilai():
         )
         return
 
+    # Menentukan prediksi berdasarkan nilai tertinggi
+    prediksi = prediksi_fakultas(
+        biologi, fisika, inggris
+    )
+
+    if prediksi == "Nilai seri":
+        messagebox.showwarning(
+            "Peringatan",
+            "Nilai tertinggi sama. Silakan periksa nilai kembali."
+        )
+        return
+
     
