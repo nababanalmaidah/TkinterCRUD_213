@@ -112,3 +112,42 @@ def submit_nilai():
     entry_nama.focus()
 
 
+# STEP 6: Membuat tampilan Tkinter
+root = tk.Tk()
+root.title("Prediksi Fakultas Siswa")
+root.resizable(False, False)
+
+tk.Label(
+    root,
+    text="PREDIKSI FAKULTAS SISWA",
+    font=("Arial", 14, "bold")
+).grid(row=0, column=0, columnspan=2, pady=12)
+
+# Entry nama siswa
+tk.Label(root, text="Nama Siswa").grid(
+    row=1, column=0, padx=10, pady=5, sticky="w"
+)
+entry_nama = tk.Entry(root, width=30)
+entry_nama.grid(row=1, column=1, padx=10, pady=5)
+
+# Entry nilai Biologi
+tk.Label(root, text="Nilai Biologi").grid(
+    row=2, column=0, padx=10, pady=5, sticky="w"
+)
+entry_biologi = tk.Entry(root, width=30)
+entry_biologi.grid(row=2, column=1, padx=10, pady=5)
+
+# Entry nilai Fisika
+tk.Label(root, text="Nilai Fisika").grid(
+    row=3, column=0, padx=10, pady=5, sticky="w"
+)
+entry_fisika = tk.Entry(root, width=30)
+entry_fisika.grid(row=3, column=1, padx=10, pady=5)
+
+# Entry nilai Inggris
+tk.Label(root, text="Nilai Inggris").grid(
+    row=4, column=0, padx=10, pady=5, sticky="w"
+)
+entry_inggris = tk.Entry(root, width=30)
+entry_inggris.grid(row=4, column=1, padx=10, pady=5)
+
