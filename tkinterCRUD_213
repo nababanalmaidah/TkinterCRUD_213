@@ -81,4 +81,34 @@ def submit_nilai():
         )
         return
 
-    
+    # STEP 5: Menyimpan data ke database SQLite
+    conn = sqlite3.connect("nilai_siswa.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        INSERT INTO nilai_siswa
+        (nama_siswa, biologi, fisika, inggris, prediksi_fakultas)
+        VALUES (?, ?, ?, ?, ?)
+    """, (nama, biologi, fisika, inggris, prediksi))
+
+    conn.commit()
+    conn.close()
+
+    # Menampilkan hasil prediksi
+    label_hasil.config(
+        text="Prediksi Fakultas: " + prediksi
+    )
+
+    messagebox.showinfo(
+        "Berhasil",
+        "Nilai berhasil disimpan!\nPrediksi: " + prediksi
+    )
+
+    # Mengosongkan input setelah berhasil
+    entry_nama.delete(0, tk.END)
+    entry_biologi.delete(0, tk.END)
+    entry_fisika.delete(0, tk.END)
+    entry_inggris.delete(0, tk.END)
+    entry_nama.focus()
+
+
